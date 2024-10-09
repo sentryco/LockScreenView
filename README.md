@@ -20,7 +20,6 @@ Add security measures to your app. Easily integrate Biometric auth / Password an
 - This example demonstrates how to integrate the `LockScreenView` into your SwiftUI application. It shows a basic setup where the lock screen is presented based on the app's authentication state.
 - This example provides a clear and concise demonstration of how to use the `LockScreenView` in a SwiftUI application, including a basic lock screen setup. Adjust the example as necessary to fit the specific functionalities and design of your application.
 
-
 ```swift
 import SwiftUI
 import LockScreenView
@@ -64,6 +63,55 @@ struct LockScreen: View {
    }
 }
 ```
+
+## Aditional example:
+
+Add a container wrapper to contain the state and add more functionality like 
+
+```swift
+// fix: add AuthConfig enum to this example
+struct LockViewModifier: ViewModifier {
+    // fix: add doc
+    @State private var isLocked: Bool = true
+    // fix: add doc
+    func body(content: Content) -> some View {
+         let lockView = LockView(content: { content }, lockScreen: { lockScreen }, isLocked: isLocked, onPhaseChange: handlePhaseChange)
+        
+    }
+    // fix: add lock UI here
+    var lockScreen: some View {
+        EmptyView()
+    }
+    // fix: add doc
+    fileprivate func handlePhaseChange(oldPhase: ScenePhase, newPhase: ScenePhase) {
+         switch newPhase {
+         case .background, .inactive:
+            #if os(iOS)
+            if isModalPresented { return } // Skip locking app if alert or sheet is active (only for IOS, macOS doesn't have autolock yet)
+            #endif
+            if oldPhase == .active { // - Fixme: ⚠️️ move into phase, ask copilot
+               isLocked = true
+            }
+         case .active:
+            if oldPhase != .active { // - Fixme: ⚠️️ move this into case?, ask copilot
+               isLocked = true // lock app if oldPhase was .inactive or .background, and new phase is .active
+            } else { Swift.print("⚠️️ This should not happen") }
+         @unknown default:
+            Swift.print("⚠️️ This can't happen newPhase - @unknown")
+         }
+      }  
+}
+
+extension View {
+    // fix: add doc
+    // convenient
+    // appView.lockView() <-This wraps the lockView over the appView
+    func lockView() -> some View {
+        self.modifier(LockViewModifier())
+    }
+}
+```
+
 
 ## Dependencies
 

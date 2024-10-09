@@ -82,4 +82,3 @@ public struct LockView<Content: View, LockScreen: View>: View {
       self._isLocked = isLocked
    }
 }
-
