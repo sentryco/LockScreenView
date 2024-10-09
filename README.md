@@ -125,7 +125,7 @@ extension View {
 
 Swift Package Manager:
 ```
-.package(url: "https://github.com/sentryco/LockScreenViev", branch: "main")
+.package(url: "https://github.com/sentryco/LockScreenView", branch: "main")
 ```
 
 ## License
