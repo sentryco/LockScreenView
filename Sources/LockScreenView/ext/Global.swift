@@ -61,7 +61,7 @@ internal var rootController: UIViewController? {
  * - Fixme: ⚠️️ Begin by tracing root etc, maybe is NSAlerController NSSheetController etc?
  * - Fixme: ⚠️️⚠️️⚠️️ move this to the LockView package
  */
-internal var isModalPresented: Bool {
+public var isModalPresented: Bool {
    let presentationStyles: [UIModalPresentationStyle] = [ // popover and sheets
       .pageSheet, // non full cover sheet
       .custom, // alert

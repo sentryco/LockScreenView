@@ -114,7 +114,6 @@ extension View {
 }
 ```
 
-
 ## Dependencies
 
 - [https://github.com/sentryco/HybridColor](https://github.com/sentryco/HybridColor): A library for handling color transformations and compatibility across different platforms.
