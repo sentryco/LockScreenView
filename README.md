@@ -1,3 +1,5 @@
+[![Tests](https://github.com/sentryco/LockScreenView/actions/workflows/Tests.yml/badge.svg)](https://github.com/sentryco/LockScreenView/actions/workflows/Tests.yml)
+
 # LockScreenView
 
 > Add lockability to your app
