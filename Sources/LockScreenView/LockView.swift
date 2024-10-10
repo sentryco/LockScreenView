@@ -70,9 +70,9 @@ public struct LockView<Content: View, LockScreen: View>: View {
     *                as a closure parameter to this initializer.
     * - Parameters:
     *   - content: The content to be displayed when the view is unlocked. This can be any SwiftUI view that represents the app's main content.
-    *   - lockScreen: - Fixme: ⚠️️ add doc
-    *   - isLocked: - Fixme: ⚠️️ add doc
-    *   - onScenePhaseChange: - Fixme: ⚠️️ add doc
+    *   - lockScreen: The lock screen to be displayed when the view is locked
+    *   - isLocked: Bool that determines if the view is locked or not
+    *   - onScenePhaseChange: This call back might not be needed as we can use the environment variable to detect when the app goes to the background or foreground in any other place as well
     * - Fixme: ⚠️️ consider calling closure when we use it, in the body etc, do some research on this etc?
     */
    public init(@ViewBuilder content: () -> Content, @ViewBuilder lockScreen: () -> LockScreen, isLocked: Binding<Bool>, onScenePhaseChange: @escaping ScenePhaseChange = { _,_ in Swift.print("default onScenePhaseChange") }) {
