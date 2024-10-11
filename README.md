@@ -12,7 +12,7 @@ Add security measures to your app. Easily integrate Biometric auth / Password an
 
 - Add your own lock UI 
 - Add your own authentication handler 
-- Avoids locking the app if there are active alerts or sheets (iOS only, because alerts and sheets are above the app views, and as such cant be locker, unless dismissed, which can result in data loss)
+- Avoids locking the app if there are active alerts or sheets (iOS only, because alerts and sheets are above the app views, and as such cant be locked, unless dismissed, which can result in data loss)
 - Designed entirely with SwiftUI, ensuring smooth integration with modern iOS and macOS applications.
 - Automatically manages app locking and unlocking based on the app's lifecycle events
 - Has translucent overlay bellow lockview as standard
