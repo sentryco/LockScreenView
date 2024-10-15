@@ -73,9 +73,15 @@ Add a container wrapper to contain the state and add more functionality like
 ```swift
 // fix: add AuthConfig enum to this example
 struct LockViewModifier: ViewModifier {
-    // fix: add doc
+    /** 
+     * Indicates whether the view is currently locked and requires authentication to access. 
+     */
     @State private var isLocked: Bool = true
-    // fix: add doc
+    /** 
+     * Returns a view that conditionally shows a lock screen based on the `isLocked` state.
+     * - Parameter content: The main content of the application.
+     * - Returns: A view that either shows the lock screen or the main content based on the authentication state.
+     */
     func body(content: Content) -> some View {
          let lockView = LockView(content: { content }, lockScreen: { lockScreen }, isLocked: isLocked, onPhaseChange: handlePhaseChange)
         
@@ -84,7 +90,12 @@ struct LockViewModifier: ViewModifier {
     var lockScreen: some View {
         EmptyView()
     }
-    // fix: add doc
+    /** 
+     * Handles the phase change event.
+     * - Parameters:
+     *   - oldPhase: The old scene phase.
+     *   - newPhase: The new scene phase.
+     */
     fileprivate func handlePhaseChange(oldPhase: ScenePhase, newPhase: ScenePhase) {
          switch newPhase {
          case .background, .inactive:
@@ -105,9 +116,19 @@ struct LockViewModifier: ViewModifier {
 }
 
 extension View {
-    // fix: add doc
-    // convenient
-    // appView.lockView() <-This wraps the lockView over the appView
+    /**
+     * Wraps the `LockViewModifier` around the calling view.
+     *
+     * This method extends any SwiftUI view to include lock screen functionality by applying the `LockViewModifier`.
+     * When invoked, it conditionally overlays a lock screen over the content based on the authentication state managed by `isLocked`.
+     *
+     * Usage:
+     * ```
+     * Text("Hello, World!").lockView()
+     * ```
+     *
+     * - Returns: A view modified by `LockViewModifier`, which conditionally displays a lock screen.
+     */
     func lockView() -> some View {
         self.modifier(LockViewModifier())
     }

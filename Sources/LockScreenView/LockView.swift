@@ -28,9 +28,9 @@ public struct LockView<Content: View, LockScreen: View>: View {
     */
    internal let content: Content
    /**
-    * Represents the lock-screen view that covers the app-view / content-view
-    * - Description: This variable determines which view to show based on the authentication configuration
-    * - Fixme: ⚠️️ improve the doc
+    * Represents the lock-screen view that overlays the main application content.
+    * - Description: This property controls the display of the lock screen based on the current authentication state,
+    *                ensuring secure access to the application's main content.
     */
    internal let lockScreen: LockScreen
    /**

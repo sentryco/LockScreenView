@@ -9,7 +9,6 @@ import BlurView
  * - Note: Ref vibrancy: https://github.com/lukakerr/NSWindowStyles (awesome overview of window styles)
  * - Note: More window stuff: https://www.albertopasca.it/whiletrue/swift-macos-how-to-make-cool-desktop-apps-using-cocoa/
  * - Fixme: ⚠️️ attach this to some general shape protocol instead of view?
- * - Fixme: ⚠️️ move to View+Ext? or somewhere else etc 👈 Move to interfacelib, near the Effect classes etc
  */
 extension View {
    /**

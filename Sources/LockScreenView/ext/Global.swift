@@ -59,7 +59,6 @@ internal var rootController: UIViewController? {
  * - Note: This is global as we parse the window stack
  * - Fixme: ⚠️️ Add macOS support (seems like mac support isn't possible to add), to test this for macOS, we have to run the app. can also be done via the UITestApp xcode proj etc. there is code in UITestApp. But its tricky to test modality. visit this later
  * - Fixme: ⚠️️ Begin by tracing root etc, maybe is NSAlerController NSSheetController etc?
- * - Fixme: ⚠️️⚠️️⚠️️ move this to the LockView package
  */
 public var isModalPresented: Bool {
    let presentationStyles: [UIModalPresentationStyle] = [ // popover and sheets

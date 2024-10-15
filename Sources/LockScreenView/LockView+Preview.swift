@@ -8,8 +8,20 @@ import HybridColor
  */
 #Preview {
    struct ContentView: View {
+      /**
+       * @State var text: String = "abc123"
+       * - Description: The text field for the password.
+       */
       @State var text: String = "abc123"
+      /**
+       * @State var isLocked: Bool = true
+       * - Description: Indicates whether the view is currently locked and requires authentication to access.
+       */
       @State var isLocked: Bool = true
+      /**
+       * body
+       * - Description: The body of the view.
+       */
       var body: some View {
          LockView(
             content: { appView },
@@ -18,6 +30,10 @@ import HybridColor
             onScenePhaseChange: handlePhaseChange
          )
       }
+      /**
+       * appView
+       * - Description: The app view.
+       */
       var appView: some View {
          let _ = { Swift.print("appView") }()
          return ZStack {
@@ -28,6 +44,10 @@ import HybridColor
             Text("App content goes here")
          }
       }
+      /**
+       * lockScreen
+       * - Description: The lock screen view.
+       */
       var lockScreen: some View {
          let _ = { Swift.print("lockScreen") }()
          return ZStack {
@@ -57,6 +77,11 @@ import HybridColor
             }
          }
       }
+      /**
+       * handlePhaseChange
+       * - Description: Handles the phase change of the scene.
+       * - Note: This is used to lock the app when the scene is inactive or background.
+       */
       func handlePhaseChange(oldPhase: ScenePhase, newPhase: ScenePhase) {
          switch newPhase {
          case .background, .inactive:
