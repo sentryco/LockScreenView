@@ -2,7 +2,9 @@ import SwiftUI
 #if os(iOS)
 /**
  * A convenience function that retrieves the key window of the app on iOS devices.
- * - Description: This function can be used to access the key window of the app on iOS devices. For example, you can use it to present a custom alert or to access the root view controller.
+ * - Description: This function can be used to access the key window of the 
+ *                app on iOS devices. For example, you can use it to present a 
+ *                custom alert or to access the root view controller.
  * - Example:
  * ```
  * if let keyWindow = keyWin {
@@ -20,7 +22,10 @@ internal var keyWin: UIWindow? {
 /**
  * rootController (Better support for SwiftUI) (iOS only)
  * - Abstract: A RootController variable that can be accessed from anywhere
- * - Description: This variable provides a reference to the root view controller of the key window, which can be used for presenting modal view controllers or accessing the current top view controller in the view hierarchy.
+ * - Description: This variable provides a reference to the root view
+ *                controller of the key window, which can be used for
+ *                presenting modal view controllers or accessing the
+ *                current top view controller in the view hierarchy.
  * - Note: Alternative name: `presentedViewController`
  * - Fixme: ⚠️️ seems like this has some issue now, causiing lldb error etc
  *
@@ -48,7 +53,10 @@ internal var rootController: UIViewController? {
 }
 /**
  * Asserts if top view is alert or sheet
- * - Description: This function checks if a modal view, such as an alert or sheet, is currently presented in the app. It is useful for ensuring that the app does not become unresponsive due to multiple modals stacking or for debugging purposes.
+ * - Description: This function checks if a modal view, such as an alert or
+ *                sheet, is currently presented in the app. It is useful for
+ *                ensuring that the app does not become unresponsive due to
+ *                multiple modals stacking or for debugging purposes.
  * - Note: Used to avoid locking app if editing something
  * - Note: Thing to print for debugging: `rootController?.sheetPresentationController`, `rootController?.presentedViewController`, `rootController?.presentationController`, `rootController?.view`, `rootController?.presentedViewController`
  * - Note: `isModalInPresentation` is for blocking userinteraction, and not relevant to this

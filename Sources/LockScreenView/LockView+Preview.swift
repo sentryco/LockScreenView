@@ -2,7 +2,10 @@ import SwiftUI
 import HybridColor
 /**
  * Preview
- * - Description: This section provides a preview of the LockScreenView. It wraps the main content of the application in a LockScreenView and sets the user preferences for the master password and biometric authentication for testing purposes.
+ * - Description: This section provides a preview of the LockScreenView.
+ *                It wraps the main content of the application in a
+ *                LockScreenView and sets the user preferences for the master
+ *                password and biometric authentication for testing purposes.
  * - Note: It seems we can't interact with phase-change in preview
  * - Fixme: ⚠️️ also make a Demo authConfig that has psw, granted, bioAuth (that is not implemented out of scope) call it AuthLevel?
  */

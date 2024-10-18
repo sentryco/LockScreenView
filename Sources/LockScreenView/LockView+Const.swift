@@ -8,7 +8,9 @@ extension LockView {
     * - Parameters:
     *   - oldPhase: The previous scene phase.
     *   - newPhase: The new scene phase that the application has transitioned to.
-    * - Description: This closure is used to perform actions or update the application state in response to changes in the scene's lifecycle.
+    * - Description: This closure is used to perform actions or update the
+    *                application state in response to changes in the scene's
+    *                lifecycle.
     */
    public typealias ScenePhaseChange = (_ oldPhase: ScenePhase, _ newPhase: ScenePhase) -> Void
 }

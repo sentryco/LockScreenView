@@ -4,14 +4,10 @@
 
 > Add lockability to your app
 
-## Description 
-
-Add security measures to your app. Easily integrate Biometric auth / Password and Pin code. 
-
 ## Features
 
-- Add your own lock UI 
-- Add your own authentication handler 
+- Add your own "lock-UI"
+- Add your own "authentication-handler"
 - Avoids locking the app if there are active alerts or sheets (iOS only, because alerts and sheets are above the app views, and as such cant be locked, unless dismissed, which can result in data loss)
 - Designed entirely with SwiftUI, ensuring smooth integration with modern iOS and macOS applications.
 - Automatically manages app locking and unlocking based on the app's lifecycle events
@@ -148,6 +144,8 @@ Swift Package Manager:
 .package(url: "https://github.com/sentryco/LockScreenView", branch: "main")
 ```
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+## Todo:
+- Improve the readme 
+- Add the improved example code 
+- Add doc regarding why it's hard to detect alerts and sheets for macOS
+- There might be a way to detect alerts and sheets for macOS, more thinking / exploration / research needed
