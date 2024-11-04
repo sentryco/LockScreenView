@@ -1,4 +1,5 @@
 [![Tests](https://github.com/sentryco/LockScreenView/actions/workflows/Tests.yml/badge.svg)](https://github.com/sentryco/LockScreenView/actions/workflows/Tests.yml)
+[![codebeat badge](https://codebeat.co/badges/07632289-3df3-41f4-a3c8-ab6b2016ce3d)](https://codebeat.co/projects/github-com-sentryco-lockscreenview-main)
 
 # LockScreenView
 
