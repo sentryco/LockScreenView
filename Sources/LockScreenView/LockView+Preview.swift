@@ -38,12 +38,12 @@ import HybridColor
        * - Description: The app view.
        */
       var appView: some View {
-         let _ = { Swift.print("appView") }()
+         _ = { Swift.print("appView") }()
          return ZStack {
             Rectangle()
                .fill(Color.darkGray.darker(amount: 0.7))
                .frame(maxWidth: .infinity, maxHeight: .infinity)
-               .edgesIgnoringSafeArea(.all) 
+               .edgesIgnoringSafeArea(.all)
             Text("App content goes here")
          }
       }
@@ -52,13 +52,13 @@ import HybridColor
        * - Description: The lock screen view.
        */
       var lockScreen: some View {
-         let _ = { Swift.print("lockScreen") }()
+         _ = { Swift.print("lockScreen") }()
          return ZStack {
             Rectangle()
                .fill(Color.blackOrWhite)
                .frame(maxWidth: .infinity, maxHeight: .infinity)
                .edgesIgnoringSafeArea(.all) // Ignore safe area to cover entire screen if needed
-            VStack(spacing: 16){
+            VStack(spacing: 16) {
                Text("Enter password to enter app")
                TextField("Password goes here...", text: $text)
                    .multilineTextAlignment(.center) // center text

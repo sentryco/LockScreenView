@@ -49,7 +49,7 @@ public struct LockView<Content: View, LockScreen: View>: View {
     *   - oldPhase: From this phase
     *   - newPhase: To this phase
     */
-   internal var onScenePhaseChange: ScenePhaseChange = { _,_ in Swift.print("default onScenePhaseChange") }
+   internal var onScenePhaseChange: ScenePhaseChange = { _, _ in Swift.print("default onScenePhaseChange") }
    /**
     * Access the current scene phase / state (background, active, inactive etc)
     * - Description: This environment variable, `scenePhase`, keeps track
@@ -88,7 +88,7 @@ public struct LockView<Content: View, LockScreen: View>: View {
     *                         place as well
     * - Fixme: ⚠️️ consider calling closure when we use it, in the body etc, do some research on this etc?
     */
-   public init(@ViewBuilder content: () -> Content, @ViewBuilder lockScreen: () -> LockScreen, isLocked: Binding<Bool>, onScenePhaseChange: @escaping ScenePhaseChange = { _,_ in Swift.print("default onScenePhaseChange") }) {
+   public init(@ViewBuilder content: () -> Content, @ViewBuilder lockScreen: () -> LockScreen, isLocked: Binding<Bool>, onScenePhaseChange: @escaping ScenePhaseChange = { _, _ in Swift.print("default onScenePhaseChange") }) {
       self.content = content()
       self.lockScreen = lockScreen()
       self.onScenePhaseChange = onScenePhaseChange

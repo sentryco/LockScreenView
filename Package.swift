@@ -11,7 +11,7 @@ let package = Package(
     products: [
         .library(
             name: "LockScreenView",
-            targets: ["LockScreenView"]),
+            targets: ["LockScreenView"])
     ],
     dependencies: [
       .package(url: "https://github.com/sentryco/HybridColor", branch: "main"),
@@ -28,6 +28,6 @@ let package = Package(
             ]),
         .testTarget(
             name: "LockScreenViewTests",
-            dependencies: ["LockScreenView"]),
+            dependencies: ["LockScreenView"])
     ]
 )
