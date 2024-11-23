@@ -1,5 +1,6 @@
 import SwiftUI
 import HapticFeedback
+import BlurView
 /**
  * Content
  */
@@ -63,6 +64,8 @@ extension LockView {
     */
    fileprivate var underlay: some View {
       Rectangle().fill(.clear) // Create a transparent rectangle
-         .translucentUnderlay() // Apply translucent underlay effect
+         .translucentUnderlay(
+            overlayColor: Color(light: Color.white.opacity(0.1), dark: Color.black.opacity(0.6))
+         ) // Apply translucent underlay effect
    }
 }
